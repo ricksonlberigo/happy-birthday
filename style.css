@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  font-family: monospace;
+  border-right: 4px solid;
+  width: 18ch;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(18), blinking 5s infinite step-end alternate;
+  margin-bottom: 20px;
+  font-size: 38px;
+}
+
+p {
+  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+main {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blinking {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.btn {
+  text-decoration: none;
+  color: black;
+  background: #c275ff;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+section .row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 10px 0;
+  white-space: nowrap;
+  font-size: 64px;
+  transform: rotate(-30deg);
+}
+
+section i {
+  color: rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  padding: 0 5px;
+  user-select: none;
+  cursor: default;
+}
+
+section i:hover {
+  color: purple;
+  transition: 0s;
+  text-shadow: 0 0 120px purple;
+}
+
+section .row div {
+  font-size: 1rem;
+  white-space: nowrap;
+  animation: animate 40s linear infinite;
+  animation-delay: -40s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+main {
+  position: absolute;
+  top: 0;
+  padding: 20px;
+}

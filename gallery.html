@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      background-color: #282c34;
+    }
+
+    section {
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .gallery {
+      width: 100%;
+      padding: 2%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 30vh;
+    }
+
+    .single-gallery {
+      background: red;
+      border-radius: 5px;
+      margin: 0.5vw;
+      overflow: hidden;
+    }
+
+    .h-2 {
+      grid-row: span 2;
+    }
+
+    .h-1 {
+      grid-row: span 1;
+    }
+
+    .w-2 {
+      grid-column: span 2;
+    }
+
+    .w-4 {
+      grid-column: span 4;
+    }
+
+    .single-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.25s ease-in-out;
+    }
+
+    .single-gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .gallery-modal {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.288);
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 4%;
+      visibility: hidden;
+      z-index: 5;
+    }
+
+    .gallery-modal span {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 22px;
+      color: red;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .gallery-modal img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(0);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.288);
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="gallery-modal" onclick="closeGallery()">
+    <span>X</span>
+    <img src="" alt="">
+  </div>
+
+  <section>
+    <div class="gallery">
+      <div class="single-gallery w-4">
+        <img src="/img/IMG-20240503-WA0009.jpg" alt="" onclick="openGallery('/img/IMG-20240503-WA0009.jpg')">
+      </div>
+      <div class="single-gallery w-2">
+        <img src="/img/IMG-20240503-WA0008.jpg" alt="" onclick="openGallery('/img/IMG-20240503-WA0008.jpg')">
+      </div>
+      <div class="single-gallery w-2">
+        <img src="/img/IMG-20240503-WA0010.jpg" alt="" onclick="openGallery('/img/IMG-20240503-WA0010.jpg')">
+      </div>
+      <div class="single-gallery w-2">
+        <img src="/img/IMG-20240503-WA0013.jpg" alt="" onclick="openGallery('/img/IMG-20240503-WA0013.jpg')">
+      </div>
+      <div class="single-gallery w-2">
+        <img src="/img/IMG-20240503-WA0012.jpg" alt="" onclick="openGallery('/img/IMG-20240503-WA0012.jpg')">
+      </div>
+      <div class="single-gallery w-4 h-2">
+        <img src="/img/IMG-20240503-WA0011.jpg" alt="" onclick="openGallery('/img/IMG-20240503-WA0011.jpg')">
+      </div>
+    </div>
+  </section>
+
+  <a class="btn" href="/index.html">Voltar</a>
+  <script src="app.js"></script>
+</body>
+
+</html>
